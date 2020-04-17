@@ -192,7 +192,7 @@ public class SshDownloader extends AbstractGerritStatsDownloader {
             String output = sshCommand.exec(String.format("query %s %s "
                     + "--format=JSON "
                     + "--all-approvals "
-                    + "--comments "
+                    + "--comments --patch-sets "
                     + "%s ",
                     gerritQuery,
                     statusQuery,
@@ -220,7 +220,7 @@ public class SshDownloader extends AbstractGerritStatsDownloader {
             String output = sshCommand.exec(String.format("query %s "
                             + "--format=JSON "
                             + "--all-approvals "
-                            + "--comments "
+                            + "--comments --patch-sets "
                             + "--all-reviewers "
                             + createStartOffsetArg(),
                     gerritQuery

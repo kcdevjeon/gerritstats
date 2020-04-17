@@ -1,0 +1,1 @@
+./gdown.sh && ./gstat.sh
