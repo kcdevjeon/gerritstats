@@ -9,11 +9,13 @@ RAWDATA="rawdata"
 SERVER_URL="ssh://$GERRIT_ID@gerrit.sw.sec.samsung.net"
 OUTPUT_PATH="/var/www/html/$PROJECT_NAME/$RAWDATA"
 
+EXEC_PATH="/home-mc/kc.jun/git/gerritstats_kc"
+
 echo "-------------------------------------------------------------------------------"
 echo "Download gerrit data from [$GIT_PATH] from [$AFTER_DATE]"
 echo "-------------------------------------------------------------------------------"
 
 rm $OUTPUT_PATH -rf
 mkdir -p $OUTPUT_PATH
-./gerrit_downloader.sh -p $GIT_PATH -s $SERVER_URL -o $OUTPUT_PATH -a $AFTER_DATE
+$EXEC_PATH/gerrit_downloader.sh -p $GIT_PATH -s $SERVER_URL -o $OUTPUT_PATH -a $AFTER_DATE
 
